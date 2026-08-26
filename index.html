@@ -8,27 +8,15 @@
       content="The Advocate — independent arts, culture, and campus journalism."
     />
     <title>The Advocate — Independent student journalism</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
 
     <header class="site-header">
-      <div class="masthead wrap">
-        <p class="issue-date">26 AUGUST 2026</p>
-        <a class="wordmark" href="#top" aria-label="The Advocate home">THE ADVOCATE</a>
-        <button class="search-trigger" type="button" aria-label="Search the site" aria-expanded="false">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.5-4.5m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" /></svg>
-        </button>
-      </div>
       <div class="nav-wrap">
         <nav class="primary-nav wrap" aria-label="Primary navigation">
+          <a class="nav-issue" href="#current-issue"><span>Issue no. 30</span><b>New</b></a>
           <button class="menu-trigger" type="button" aria-label="Open navigation" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
@@ -41,13 +29,26 @@
           </div>
         </nav>
       </div>
+      <div class="masthead wrap">
+        <p class="issue-date">26 AUGUST 2026 <span>•</span> NEW YORK</p>
+        <a class="wordmark" href="#top" aria-label="The Advocate home">THE ADVOCATE</a>
+        <button class="search-trigger" type="button" aria-label="Search the site" aria-expanded="false">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.5-4.5m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" /></svg>
+          <span>Search</span>
+        </button>
+      </div>
     </header>
 
     <main id="content">
       <section class="lead-story wrap" id="top">
-        <p class="eyebrow">Campus &middot; Commentary</p>
-        <h1>Do We Need to Imagine the End of the University?</h1>
-        <p class="lead-deck">An inquiry into the institutions we inherit, the futures they make possible, and the room left for collective imagination.</p>
+        <div class="landing-grid">
+          <div class="lead-intro">
+            <p class="eyebrow">Campus &middot; Commentary</p>
+            <h1>Do We Need to Imagine the End of the University?</h1>
+            <p class="lead-deck">An inquiry into the institutions we inherit, the futures they make possible, and the room left for collective imagination.</p>
+          </div>
+          <aside class="landing-note"><p>In this issue</p><strong>30</strong><span>voices thinking in public</span><i aria-hidden="true">↘</i></aside>
+        </div>
 
         <div class="hero-carousel" aria-label="Featured stories">
           <article class="hero-slide is-active" data-slide="0">
@@ -55,37 +56,42 @@
               <span class="cloud cloud-one"></span><span class="cloud cloud-two"></span>
               <span class="building building-left"></span><span class="building building-right"></span><span class="building building-center"></span>
               <span class="statue"><i></i><b></b><em></em><strong></strong></span>
+              <span class="art-label">Cover story<br /><b>01</b></span>
             </div>
             <div class="hero-caption">
-              <span>Featured essay</span>
+              <span><b>Featured essay</b><small>8 min read &middot; 32 comments</small></span>
               <a href="#article-end">Read the story <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article class="hero-slide poem-slide" data-slide="1" hidden>
             <div class="hero-art poem-art" role="img" aria-label="Abstract black and cream editorial artwork">
               <span class="poem-sun"></span><span class="poem-line line-a"></span><span class="poem-line line-b"></span><span class="poem-type">A SMALL<br />UNIVERSE</span>
+              <span class="art-label">Poetry<br /><b>02</b></span>
             </div>
-            <div class="hero-caption"><span>New poetry</span><a href="#articles">Read the story <span aria-hidden="true">↗</span></a></div>
+            <div class="hero-caption"><span><b>New poetry</b><small>4 min read &middot; 8 comments</small></span><a href="#articles">Read the story <span aria-hidden="true">↗</span></a></div>
           </article>
           <article class="hero-slide archive-slide" data-slide="2" hidden>
-            <div class="hero-art archive-art" role="img" aria-label="Bright editorial archive artwork"><span>ARCHIVE<br /><i>08</i></span></div>
-            <div class="hero-caption"><span>From the archive</span><a href="#back-issues">Open the issue <span aria-hidden="true">↗</span></a></div>
+            <div class="hero-art archive-art" role="img" aria-label="Bright editorial archive artwork"><span>ARCHIVE<br /><i>08</i></span><small class="art-label">From the archive<br /><b>03</b></small></div>
+            <div class="hero-caption"><span><b>From the archive</b><small>6 min read &middot; 14 comments</small></span><a href="#back-issues">Open the issue <span aria-hidden="true">↗</span></a></div>
           </article>
           <article class="hero-slide field-slide" data-slide="3" hidden>
-            <div class="hero-art field-art" role="img" aria-label="Green and red illustrated editorial artwork"><span>PERFECT<br />VICTIMS</span></div>
-            <div class="hero-caption"><span>Review</span><a href="#articles">Read the story <span aria-hidden="true">↗</span></a></div>
+            <div class="hero-art field-art" role="img" aria-label="Green and red illustrated editorial artwork"><span>PERFECT<br />VICTIMS</span><small class="art-label">Review<br /><b>04</b></small></div>
+            <div class="hero-caption"><span><b>Review</b><small>5 min read &middot; 11 comments</small></span><a href="#articles">Read the story <span aria-hidden="true">↗</span></a></div>
           </article>
-          <div class="carousel-controls" role="tablist" aria-label="Choose featured story">
-            <button class="is-current" type="button" role="tab" aria-selected="true" aria-label="Show feature 1" data-go="0"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Show feature 2" data-go="1"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Show feature 3" data-go="2"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Show feature 4" data-go="3"></button>
+          <div class="carousel-footer">
+            <div class="carousel-controls" role="tablist" aria-label="Choose featured story">
+              <button class="is-current" type="button" role="tab" aria-selected="true" aria-label="Show feature 1" data-go="0"></button>
+              <button type="button" role="tab" aria-selected="false" aria-label="Show feature 2" data-go="1"></button>
+              <button type="button" role="tab" aria-selected="false" aria-label="Show feature 3" data-go="2"></button>
+              <button type="button" role="tab" aria-selected="false" aria-label="Show feature 4" data-go="3"></button>
+            </div>
+            <p class="carousel-page"><span class="current-slide" aria-live="polite">01</span><i>/</i>04</p>
           </div>
         </div>
       </section>
 
       <section class="news-section wrap" id="articles">
-        <div class="section-heading"><p class="eyebrow">Issue no. 30</p><h2>Latest News</h2></div>
+        <div class="section-heading"><div><p class="eyebrow">Issue no. 30</p><h2>Latest News</h2></div><p class="section-note">New reporting, writing, and art from our community.</p></div>
         <div class="news-grid">
           <aside class="issue-promo" id="current-issue">
             <div class="issue-cover" aria-label="Grounding the Groundless issue cover">
@@ -102,12 +108,14 @@
               <a class="card-link" href="#article-end"><p class="article-type">Poetry</p><h3>Excerpt From This Weird Called Fate: An Abécédaire of Parodic Gestures and Brute Reveries</h3></a>
               <div class="diptych-art" aria-hidden="true"><div class="sketch skeleton"></div><div class="sketch child"></div></div>
               <p class="excerpt">By Yagiz Ay Lulu. Do we have to go out tonight? My nerves are bad and I am uncertain....</p>
+              <div class="article-meta"><span>6 min read</span><span class="comment-count"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a7.4 7.4 0 0 1-8 7.3 8.9 8.9 0 0 1-2.9-.5L4 20l1.6-4.1A7 7 0 0 1 4 11.5 7.4 7.4 0 0 1 12 4a7.4 7.4 0 0 1 8 7.5Z" /></svg>17 comments</span></div>
               <a class="tag" href="#articles">All articles, poetry</a>
             </article>
             <article class="article-card review-card">
               <a class="card-link" href="#articles"><p class="article-type">Review</p><h3>Review: Perfect Victims and the Politics of Appeal</h3></a>
               <div class="review-art"><span>Perfect<br /><i>Victims</i></span></div>
               <p class="excerpt">What does a demand for palatability obscure, and who is allowed to appear complicated?</p>
+              <div class="article-meta"><span>5 min read</span><span class="comment-count"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a7.4 7.4 0 0 1-8 7.3 8.9 8.9 0 0 1-2.9-.5L4 20l1.6-4.1A7 7 0 0 1 4 11.5 7.4 7.4 0 0 1 12 4a7.4 7.4 0 0 1 8 7.5Z" /></svg>11 comments</span></div>
               <a class="tag" href="#articles">All articles, reviews</a>
             </article>
           </div>

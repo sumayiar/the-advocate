@@ -8,6 +8,8 @@ const menuButton = document.querySelector('.menu-trigger');
 const navLinks = document.querySelector('.nav-links');
 const slides = [...document.querySelectorAll('.hero-slide')];
 const dots = [...document.querySelectorAll('[data-go]')];
+const currentSlideLabel = document.querySelector('.current-slide');
+const carousel = document.querySelector('.hero-carousel');
 let activeSlide = 0;
 let carouselTimer;
 
@@ -23,6 +25,7 @@ function showSlide(index) {
     dot.classList.toggle('is-current', active);
     dot.setAttribute('aria-selected', String(active));
   });
+  currentSlideLabel.textContent = String(index + 1).padStart(2, '0');
 }
 
 function resetCarousel() {
@@ -34,6 +37,20 @@ dots.forEach((dot) => dot.addEventListener('click', () => {
   showSlide(Number(dot.dataset.go));
   resetCarousel();
 }));
+
+dots.forEach((dot) => dot.addEventListener('keydown', (event) => {
+  if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+  event.preventDefault();
+  const nextIndex = event.key === 'ArrowRight'
+    ? (Number(dot.dataset.go) + 1) % dots.length
+    : (Number(dot.dataset.go) - 1 + dots.length) % dots.length;
+  dots[nextIndex].focus();
+  showSlide(nextIndex);
+  resetCarousel();
+}));
+
+carousel.addEventListener('mouseenter', () => window.clearInterval(carouselTimer));
+carousel.addEventListener('mouseleave', resetCarousel);
 resetCarousel();
 
 function openSearch() {
