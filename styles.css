@@ -11,17 +11,19 @@
   --coral: #ef674d;
   --green: #3e6c39;
   --title: "IvyPresto Headline", "IvyPresto Display", Baskerville, Georgia, "Times New Roman", serif;
-  --article: Baskerville, "Baskerville Old Face", Georgia, "Times New Roman", serif;
-  --editors-note: "Reiher Headline", Reiher, Baskerville, Georgia, serif;
-  --dispatch: Thonburi, "Helvetica Neue", Arial, sans-serif;
-  --poem: Courier, "Courier New", monospace;
-  --serif: var(--article);
-  --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --body: Baskerville, "Baskerville Old Face", Georgia, "Times New Roman", serif;
+  --article: var(--body);
+  --editors-note: var(--body);
+  --dispatch: var(--body);
+  --poem: var(--body);
+  --serif: var(--body);
+  --sans: var(--body);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; overflow-x: hidden; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--title); }
 a { color: inherit; text-decoration: none; }
 button, input { font: inherit; }
 button { cursor: pointer; }
@@ -88,4 +90,10 @@ button { cursor: pointer; }
 
 @media (max-width: 1000px) { .lead-story h1 { white-space: normal; }.news-grid { gap: 24px; }.issue-promo { grid-column: span 4; }.article-stream { grid-column: span 8; }.categories { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(5, 1fr); }.categories h2 { grid-column: 1 / -1; }.categories a { border-right: 1px solid var(--line); }.contribute { grid-template-columns: 1fr 1fr; }.contribute .line-button { grid-column: 1 / -1; justify-self: start; } }
 @media (max-width: 720px) { .wrap { width: min(100% - 38px, 1280px); }.primary-nav { min-height: 44px; }.nav-links { position: absolute; z-index: 10; top: 44px; right: 0; left: 0; display: none; padding: 7px 19px 14px; flex-direction: column; background: var(--ink); box-shadow: 0 15px 20px rgba(0,0,0,.22); }.nav-links.is-open { display: flex; }.nav-links a { display: block; padding: 12px 0; border-bottom: 1px solid #3e4a59; }.nav-links a::after { display: none; }.menu-trigger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 45px; border: 0; background: transparent; }.menu-trigger span { display: block; width: 22px; height: 2px; background: #fff; }.masthead { min-height: 95px; }.issue-date { margin-bottom: 8px; }.wordmark { letter-spacing: .11em; }.search-trigger { padding: 8px; }.search-trigger span { display: none; }.landing-grid { display: block; }.lead-support { display: block; }.landing-note { display: none; }.lead-story { padding-top: 28px; }.lead-deck { margin-top: 13px; font-size: .97rem; }.hero-art { height: 295px; }.statue { width: 245px; }.cloud-two { right: -9%; }.art-label { top: 15px; right: 16px; }.hero-caption { min-height: 64px; }.news-section { padding: 35px 0 60px; }.section-heading { display: block; }.section-note { margin-top: 14px; }.news-grid { display: block; padding-top: 26px; }.issue-promo { max-width: 420px; margin-bottom: 45px; }.article-card { margin-bottom: 32px; }.article-card h3 { font-size: 1.43rem; }.categories { display: block; margin-top: 42px; }.categories a { border-right: 0; }.manifesto { padding: 60px 0; }.contribute { display: block; padding: 60px 0; }.contribute > p { margin: 25px 0; }.footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }.diptych-art { height: 178px; }.archive-section { padding: 54px 0 66px; }.archive-heading { display: block; }.archive-summary { margin-top: 14px; }.archive-list { display: block; }.archive-card, .archive-card:nth-child(even) { grid-template-columns: 98px minmax(0, 1fr); gap: 14px; padding: 16px 0; border-right: 0; }.archive-art { min-height: 98px; }.archive-card h3 { font-size: 1.08rem; }.archive-excerpt { -webkit-line-clamp: 2; font-size: .77rem; }.archive-card .article-meta { gap: 7px; align-items: start; flex-direction: column; }.reader-section { padding: 32px 0 60px; }.reader-back { margin-bottom: 24px; }.reader-body { font-size: 1.01rem; }.reader-body blockquote { margin-left: 0; }.search-panel form { display: block; border-bottom: 0; }.search-panel input { width: 100%; margin-bottom: 14px; border-bottom: 2px solid var(--ink); }.search-panel form button { padding: 13px 19px; } }
+/* The former section-specific type treatments now follow the site-wide title/body system. */
+.search-panel h2, .archive-art span, .poem-type { font-family: var(--title); }
+.archive-card--poem h3, .archive-card--dispatch h3 { font-family: var(--title); }
+.reader-article--dispatch .reader-body h2, .reader-article--dispatch .reader-body h3,
+.reader-article--poem .reader-body h2, .reader-article--poem .reader-body h3, .reader-article--poem .reader-body h4 { font-family: var(--title); }
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
