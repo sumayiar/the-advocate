@@ -164,8 +164,9 @@ function articleCard(post, index) {
   const category = getPrimaryCategory(post);
   const comments = commentCount(post);
   const color = ['blue', 'pink', 'yellow', 'green'][index % 4];
+  const typographyClass = category.slug === 'poetry' ? ' archive-card--poem' : category.slug === 'art-dispatch' ? ' archive-card--dispatch' : '';
   return `
-    <article class="archive-card">
+    <article class="archive-card${typographyClass}">
       <a class="archive-art archive-art--${color}" href="${articleHref(post.slug)}" aria-label="Read ${escapeHtml(textFromHtml(post.title))}"><span>${String(index + 1).padStart(2, '0')}</span></a>
       <div class="archive-card__content">
         <p class="article-type">${escapeHtml(category.name)}</p>
@@ -247,17 +248,21 @@ function sanitizeContent(html = '') {
   return template.innerHTML;
 }
 
-function showReader(title, body, metadata = '', comments = []) {
+function showReader(title, body, metadata = '', comments = [], typographyClass = '') {
   homeContent.hidden = true;
   reader.hidden = false;
   reader.innerHTML = `
     <a class="reader-back" href="./#archive">← Back to all articles</a>
-    <article class="reader-article">
+    <article class="reader-article${typographyClass}">
       ${metadata ? `<p class="eyebrow">${metadata}</p>` : ''}
       <h1>${escapeHtml(title)}</h1>
       <div class="reader-body">${sanitizeContent(body)}</div>
       ${comments.length ? `<section class="reader-comments"><h2>${comments.length} public comment${comments.length === 1 ? '' : 's'}</h2>${comments.map((comment) => `<article><p class="comment-author">${escapeHtml(comment.authorName || 'Reader')} <span>${formatDate(comment.date)}</span></p><div>${sanitizeContent(comment.content)}</div></article>`).join('')}</section>` : ''}
     </article>`;
+  reader.querySelectorAll('.reader-body p').forEach((paragraph) => {
+    const opening = paragraph.textContent.trim().replace(/^[“"']+/, '');
+    if (/^(ed\.?\s*note|editor'?s\s*note)\b/i.test(opening)) paragraph.classList.add('editors-note');
+  });
   window.scrollTo(0, 0);
 }
 
@@ -281,7 +286,8 @@ async function renderRoute() {
           textFromHtml(post.title),
           article.content,
           `${escapeHtml(category.name)} · ${formatDate(post.date)} · ${estimateReadTime(article)} min read · ${comments.length} comment${comments.length === 1 ? '' : 's'}`,
-          comments
+          comments,
+          category.slug === 'poetry' ? ' reader-article--poem' : category.slug === 'art-dispatch' ? ' reader-article--dispatch' : ''
         );
       } catch (error) {
         reader.querySelector('.reader-body').innerHTML = '<p>This article could not load. Please return to the archive and try again.</p>';
