@@ -16,6 +16,32 @@ const archiveList = document.querySelector('#archive-list');
 const archiveCategories = document.querySelector('#archive-categories');
 const archiveSummary = document.querySelector('#archive-summary');
 const loadMore = document.querySelector('#load-more');
+const mastheadDate = document.querySelector('#masthead-date');
+
+const newYorkDateFormatter = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'America/New_York',
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+});
+const newYorkIsoDateFormatter = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'America/New_York',
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+});
+
+function refreshMastheadDate() {
+  if (!mastheadDate) return;
+  const date = new Date();
+  const parts = Object.fromEntries(newYorkDateFormatter.formatToParts(date).map(({ type, value }) => [type, value]));
+  const isoParts = Object.fromEntries(newYorkIsoDateFormatter.formatToParts(date).map(({ type, value }) => [type, value]));
+  mastheadDate.textContent = `${parts.day} ${parts.month.toUpperCase()} ${parts.year}`;
+  mastheadDate.dateTime = `${isoParts.year}-${isoParts.month}-${isoParts.day}`;
+}
+
+refreshMastheadDate();
+window.setInterval(refreshMastheadDate, 60_000);
 
 const query = new URLSearchParams(window.location.search);
 const ARTICLE_PAGE_SIZE = 12;
