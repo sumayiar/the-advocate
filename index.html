@@ -144,7 +144,15 @@
         <a class="line-button" href="?page=contribute">Send a pitch</a>
       </section>
       <section class="archive-section wrap" id="archive" aria-labelledby="archive-heading">
-        <div class="archive-heading"><div><p class="eyebrow">The complete collection</p><h2 id="archive-heading">All Articles</h2></div><p id="archive-summary" class="archive-summary">Loading the Advocate archive…</p></div>
+        <div class="archive-heading">
+          <div><p class="eyebrow">The complete collection</p><h2 id="archive-heading">All Articles</h2></div>
+          <div class="archive-tools">
+            <p id="archive-summary" class="archive-summary">Loading the Advocate archive…</p>
+            <button class="archive-search-trigger" type="button" aria-label="Search articles" aria-expanded="false" title="Search articles">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.5-4.5m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" /></svg>
+            </button>
+          </div>
+        </div>
         <div id="archive-categories" class="archive-categories" aria-label="Filter articles by category"></div>
         <div id="archive-list" class="archive-list" aria-live="polite"></div>
         <button id="load-more" class="load-more" type="button" hidden>Load more articles <span aria-hidden="true">↓</span></button>

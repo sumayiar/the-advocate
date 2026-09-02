@@ -1,5 +1,6 @@
 const dialog = document.querySelector('.search-dialog');
 const searchButton = document.querySelector('.search-trigger');
+const archiveSearchButton = document.querySelector('.archive-search-trigger');
 const closeSearch = document.querySelector('.close-search');
 const searchInput = document.querySelector('#search-input');
 const searchForm = document.querySelector('#search-form');
@@ -52,6 +53,7 @@ let carouselTimer;
 let catalog;
 let filteredPosts = [];
 let shownPosts = ARTICLE_PAGE_SIZE;
+let lastSearchTrigger = searchButton;
 
 function showSlide(index) {
   activeSlide = index;
@@ -93,21 +95,22 @@ carousel.addEventListener('mouseenter', () => window.clearInterval(carouselTimer
 carousel.addEventListener('mouseleave', resetCarousel);
 resetCarousel();
 
-function openSearch() {
+function openSearch(event) {
+  lastSearchTrigger = event?.currentTarget || searchButton;
   dialog.classList.add('is-open');
   dialog.setAttribute('aria-hidden', 'false');
-  searchButton.setAttribute('aria-expanded', 'true');
+  [searchButton, archiveSearchButton].filter(Boolean).forEach((button) => button.setAttribute('aria-expanded', 'true'));
   window.setTimeout(() => searchInput.focus(), 120);
 }
 
 function hideSearch() {
   dialog.classList.remove('is-open');
   dialog.setAttribute('aria-hidden', 'true');
-  searchButton.setAttribute('aria-expanded', 'false');
-  searchButton.focus();
+  [searchButton, archiveSearchButton].filter(Boolean).forEach((button) => button.setAttribute('aria-expanded', 'false'));
+  lastSearchTrigger.focus();
 }
 
-searchButton.addEventListener('click', openSearch);
+[searchButton, archiveSearchButton].filter(Boolean).forEach((button) => button.addEventListener('click', openSearch));
 closeSearch.addEventListener('click', hideSearch);
 dialog.addEventListener('click', (event) => { if (event.target === dialog) hideSearch(); });
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && dialog.classList.contains('is-open')) hideSearch(); });
