@@ -1,5 +1,7 @@
 # The Advocate
 
+> **Redesign in progress:** I am redesigning The Advocate website, reworking its editorial presentation, navigation, and archive experience for the web.
+
 A static editorial website, ready to publish with GitHub Pages. It has no build step or package dependencies.
 
 ## Migrated archive
