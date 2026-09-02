@@ -26,7 +26,7 @@
       "title": "In Due Time: Student Movements and Social Justice Conference",
       "excerpt": "<p>“The trouble with socialism,” Oscar Wilde quipped, “is that it takes up too many evenings.” Much the same can be said for organizing, and conferences about organizing. Who has the evenings, much less the afternoons and the mornings, to…</p>",
       "categories": [
-        75292,
+        75368,
         75359
       ],
       "tags": [],
@@ -42,7 +42,7 @@
       "title": "Notes on Occupation: Lessons From Minneapolis",
       "excerpt": "<p>A packed room, a rallying &quot;Fuck ICE&quot; to kick things off. Speaking of &quot;what&#x27;s most needful in our lives,&quot; The Left Voice and the GC Immigrant Solidarity Working Group put on a memorable evening that featured moving firsthand accounts from…</p>",
       "categories": [
-        75292,
+        75368,
         75359
       ],
       "tags": [],
@@ -58,7 +58,7 @@
       "title": "One Battle Royale After Another: Fellowship Season Kills the Spirit",
       "excerpt": "<p>Running into an English PhD from Stanford at a cafe, this dispatcher was reminded of the low conditions we are forced to endure as CUNY grad workers. Discoursing on her teaching load, how some of her classes held as few as three students,…</p>",
       "categories": [
-        75292,
+        75368,
         75359
       ],
       "tags": [],
@@ -74,7 +74,7 @@
       "title": "Cloud, Stream, Lake: The Indexical Return",
       "excerpt": "<p>On March 13, 2026, Dr. Shannon Mattern, Director of Creative Research at Metropolitan New York Library Council, gave an expansive presentation on the concept of the index in our current epistemological, political and ecological context, as…</p>",
       "categories": [
-        75292,
+        75368,
         75359
       ],
       "tags": [],
@@ -90,7 +90,7 @@
       "title": "The Graduate Center Cannot Hold: Of Paupers and Papers at the Advocate",
       "excerpt": "<p>Student newspaper evokes cloying undergrads and an extracurricular for the unathletic. It&#x27;s difficult—at least for me—to understand it as any kind of center, a place for anyone to turn in order to ground their understanding of a school.…</p>",
       "categories": [
-        75292,
+        75368,
         75359
       ],
       "tags": [],
@@ -106,7 +106,7 @@
       "title": "The Black Man Looks at White Academia: Racism Abroad and at Home",
       "excerpt": "<p>As I sat to write these words, I couldn’t help but reflect on what had happened to me the day before, in Mannheim, Germany, where kids were making monkey noises in my direction. In these moments of absolute incredulity, the immediate…</p>",
       "categories": [
-        75292,
+        75368,
         75359
       ],
       "tags": [],
@@ -8290,6 +8290,13 @@
       "description": ""
     },
     {
+      "id": 75368,
+      "name": "Dispatch",
+      "slug": "dispatch",
+      "count": 6,
+      "description": ""
+    },
+    {
       "id": 1945,
       "name": "Back Page",
       "slug": "back-page",
@@ -8314,7 +8321,7 @@
       "id": 75292,
       "name": "CUNY News",
       "slug": "cuny-news",
-      "count": 15,
+      "count": 9,
       "description": ""
     },
     {

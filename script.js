@@ -46,7 +46,7 @@ window.setInterval(refreshMastheadDate, 60_000);
 
 const query = new URLSearchParams(window.location.search);
 const ARTICLE_PAGE_SIZE = 12;
-const visibleCategorySlugs = ['conversations', 'cuny-experience', 'cuny-news', 'current-issue', 'current-issue-advocate', 'debate', 'editorials', 'features', 'letters', 'poetry', 'reviews', 'back-page', 'art-dispatch'];
+const visibleCategorySlugs = ['conversations', 'cuny-experience', 'cuny-news', 'current-issue', 'current-issue-advocate', 'debate', 'dispatch', 'editorials', 'features', 'letters', 'poetry', 'reviews', 'back-page', 'art-dispatch'];
 const safeTags = new Set(['P', 'BR', 'H2', 'H3', 'H4', 'H5', 'H6', 'BLOCKQUOTE', 'UL', 'OL', 'LI', 'STRONG', 'EM', 'I', 'B', 'A', 'IMG', 'FIGURE', 'FIGCAPTION', 'HR', 'DIV', 'SPAN', 'TABLE', 'THEAD', 'TBODY', 'TR', 'TH', 'TD', 'PRE', 'CODE']);
 let activeSlide = 0;
 let carouselTimer;
